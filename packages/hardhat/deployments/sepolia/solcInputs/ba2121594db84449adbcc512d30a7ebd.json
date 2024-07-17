@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Identity.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract IdentityVerification {\n\n    /**\n     * @dev Struct representing an identity.\n     * @param user The address of the user.\n     * @param name The name of the user.\n     * @param email The email of the user.\n     * @param isVerified Indicates if the identity is verified.\n     * @param exists Indicates if the identity exists.\n     */\n    struct Identity {\n        address user;\n        string name;\n        string email;\n        bool isVerified;\n        bool exists;\n    }\n\n    /// Mapping from user address to their identity\n    mapping(address => Identity) public identities;\n\n    /// Event emitted when a new identity is added\n    event IdentityAdded(address indexed user, string name, string email);\n\n    /// Event emitted when an identity is updated\n    event IdentityUpdated(address indexed user, string name, string email);\n\n    /// Event emitted when an identity is deleted\n    event IdentityDeleted(address indexed user);\n\n    /// Event emitted when an identity is verified\n    event IdentityVerified(address indexed user);\n\n    /// Event emitted when an identity is revoked\n    event IdentityRevoked(address indexed user);\n\n    /// Event emitted when an identity-related action is logged\n    event IdentityActionLogged(string action);\n\n    /**\n     * @dev Adds a new identity for the caller.\n     * @param _name The name of the user.\n     * @param _email The email of the user.\n     */\n    function addIdentity(string memory _name, string memory _email) public {\n        require(!identities[msg.sender].exists, \"Identity already exists\");\n        identities[msg.sender] = Identity({\n            user: msg.sender,\n            name: _name,\n            email: _email,\n            isVerified: false,\n            exists: true\n        });\n        emit IdentityAdded(msg.sender, _name, _email);\n        logIdentityAction(\"Identity Added\");\n    }\n\n    /**\n     * @dev Updates the identity of the caller.\n     * @param _name The new name of the user.\n     * @param _email The new email of the user.\n     */\n    function updateIdentity(string memory _name, string memory _email) public {\n        require(identities[msg.sender].exists, \"Identity does not exist\");\n        identities[msg.sender].name = _name;\n        identities[msg.sender].email = _email;\n        emit IdentityUpdated(msg.sender, _name, _email);\n        logIdentityAction(\"Identity Updated\");\n    }\n\n    /**\n     * @dev Deletes the identity of the caller.\n     */\n    function deleteIdentity() public {\n        require(identities[msg.sender].exists, \"Identity does not exist\");\n        delete identities[msg.sender];\n        emit IdentityDeleted(msg.sender);\n        logIdentityAction(\"Identity Deleted\");\n    }\n\n    /**\n     * @dev Verifies the identity of the caller.\n     */\n    function verifyIdentity() public {\n        require(identities[msg.sender].exists, \"Identity does not exist\");\n        identities[msg.sender].isVerified = true;\n        emit IdentityVerified(msg.sender);\n        logIdentityAction(\"Identity Verified\");\n    }\n\n    /**\n     * @dev Revokes the verification of the identity of the caller.\n     */\n    function revokeIdentity() public {\n        require(identities[msg.sender].exists, \"Identity does not exist\");\n        identities[msg.sender].isVerified = false;\n        emit IdentityRevoked(msg.sender);\n        logIdentityAction(\"Identity Revoked\");\n    }\n\n    /**\n     * @dev Retrieves the identity of a given user.\n     * @param _user The address of the user.\n     * @return The identity of the user.\n     */\n    function getIdentity(address _user) public view returns (Identity memory) {\n        require(identities[_user].exists, \"Identity does not exist\");\n        return identities[_user];\n    }\n\n    /**\n     * @dev Checks if a given user's identity is verified.\n     * @param _user The address of the user.\n     * @return True if the user's identity is verified, false otherwise.\n     */\n    function isIdentityVerified(address _user) public view returns (bool) {\n        require(identities[_user].exists, \"Identity does not exist\");\n        return identities[_user].isVerified;\n    }\n\n    /**\n     * @dev Logs an identity-related action.\n     * @param action The action to log.\n     */\n    function logIdentityAction(string memory action) internal {\n        emit IdentityActionLogged(action);\n    }\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

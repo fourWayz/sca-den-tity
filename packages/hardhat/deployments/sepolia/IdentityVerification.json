@@ -1,0 +1,449 @@
+{
+  "address": "0x4dB70Bc91881851afEaA96E01958B0475eCE45c9",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "action",
+          "type": "string"
+        }
+      ],
+      "name": "IdentityActionLogged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "email",
+          "type": "string"
+        }
+      ],
+      "name": "IdentityAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityDeleted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityRevoked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "email",
+          "type": "string"
+        }
+      ],
+      "name": "IdentityUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityVerified",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_email",
+          "type": "string"
+        }
+      ],
+      "name": "addIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "deleteIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "getIdentity",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "email",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "isVerified",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "exists",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct IdentityVerification.Identity",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "identities",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "isVerified",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "exists",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "isIdentityVerified",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "revokeIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_email",
+          "type": "string"
+        }
+      ],
+      "name": "updateIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "verifyIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x96c15aa1112c8ebba29a412d63fd5e2afff867a7bfe518228b23c43e879e3779",
+  "receipt": {
+    "to": null,
+    "from": "0xa96513610EA12164De19CbDAbfAf66307AAE7e26",
+    "contractAddress": "0x4dB70Bc91881851afEaA96E01958B0475eCE45c9",
+    "transactionIndex": 47,
+    "gasUsed": "838990",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xe298892066da8454245cc4d88ad26fb51b615a8f6fbd0a701d7979d802eb2bd0",
+    "transactionHash": "0x96c15aa1112c8ebba29a412d63fd5e2afff867a7bfe518228b23c43e879e3779",
+    "logs": [],
+    "blockNumber": 6330036,
+    "cumulativeGasUsed": "10251518",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "ba2121594db84449adbcc512d30a7ebd",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"action\",\"type\":\"string\"}],\"name\":\"IdentityActionLogged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"email\",\"type\":\"string\"}],\"name\":\"IdentityAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"IdentityDeleted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"IdentityRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"email\",\"type\":\"string\"}],\"name\":\"IdentityUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"IdentityVerified\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_email\",\"type\":\"string\"}],\"name\":\"addIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deleteIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getIdentity\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"email\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isVerified\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"}],\"internalType\":\"struct IdentityVerification.Identity\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"identities\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"email\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isVerified\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"isIdentityVerified\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"revokeIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_email\",\"type\":\"string\"}],\"name\":\"updateIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"verifyIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"addIdentity(string,string)\":{\"details\":\"Adds a new identity for the caller.\",\"params\":{\"_email\":\"The email of the user.\",\"_name\":\"The name of the user.\"}},\"deleteIdentity()\":{\"details\":\"Deletes the identity of the caller.\"},\"getIdentity(address)\":{\"details\":\"Retrieves the identity of a given user.\",\"params\":{\"_user\":\"The address of the user.\"},\"returns\":{\"_0\":\"The identity of the user.\"}},\"isIdentityVerified(address)\":{\"details\":\"Checks if a given user's identity is verified.\",\"params\":{\"_user\":\"The address of the user.\"},\"returns\":{\"_0\":\"True if the user's identity is verified, false otherwise.\"}},\"revokeIdentity()\":{\"details\":\"Revokes the verification of the identity of the caller.\"},\"updateIdentity(string,string)\":{\"details\":\"Updates the identity of the caller.\",\"params\":{\"_email\":\"The new email of the user.\",\"_name\":\"The new name of the user.\"}},\"verifyIdentity()\":{\"details\":\"Verifies the identity of the caller.\"}},\"version\":1},\"userdoc\":{\"events\":{\"IdentityActionLogged(string)\":{\"notice\":\"Event emitted when an identity-related action is logged\"},\"IdentityAdded(address,string,string)\":{\"notice\":\"Event emitted when a new identity is added\"},\"IdentityDeleted(address)\":{\"notice\":\"Event emitted when an identity is deleted\"},\"IdentityRevoked(address)\":{\"notice\":\"Event emitted when an identity is revoked\"},\"IdentityUpdated(address,string,string)\":{\"notice\":\"Event emitted when an identity is updated\"},\"IdentityVerified(address)\":{\"notice\":\"Event emitted when an identity is verified\"}},\"kind\":\"user\",\"methods\":{\"identities(address)\":{\"notice\":\"Mapping from user address to their identity\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Identity.sol\":\"IdentityVerification\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Identity.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ncontract IdentityVerification {\\n\\n    /**\\n     * @dev Struct representing an identity.\\n     * @param user The address of the user.\\n     * @param name The name of the user.\\n     * @param email The email of the user.\\n     * @param isVerified Indicates if the identity is verified.\\n     * @param exists Indicates if the identity exists.\\n     */\\n    struct Identity {\\n        address user;\\n        string name;\\n        string email;\\n        bool isVerified;\\n        bool exists;\\n    }\\n\\n    /// Mapping from user address to their identity\\n    mapping(address => Identity) public identities;\\n\\n    /// Event emitted when a new identity is added\\n    event IdentityAdded(address indexed user, string name, string email);\\n\\n    /// Event emitted when an identity is updated\\n    event IdentityUpdated(address indexed user, string name, string email);\\n\\n    /// Event emitted when an identity is deleted\\n    event IdentityDeleted(address indexed user);\\n\\n    /// Event emitted when an identity is verified\\n    event IdentityVerified(address indexed user);\\n\\n    /// Event emitted when an identity is revoked\\n    event IdentityRevoked(address indexed user);\\n\\n    /// Event emitted when an identity-related action is logged\\n    event IdentityActionLogged(string action);\\n\\n    /**\\n     * @dev Adds a new identity for the caller.\\n     * @param _name The name of the user.\\n     * @param _email The email of the user.\\n     */\\n    function addIdentity(string memory _name, string memory _email) public {\\n        require(!identities[msg.sender].exists, \\\"Identity already exists\\\");\\n        identities[msg.sender] = Identity({\\n            user: msg.sender,\\n            name: _name,\\n            email: _email,\\n            isVerified: false,\\n            exists: true\\n        });\\n        emit IdentityAdded(msg.sender, _name, _email);\\n        logIdentityAction(\\\"Identity Added\\\");\\n    }\\n\\n    /**\\n     * @dev Updates the identity of the caller.\\n     * @param _name The new name of the user.\\n     * @param _email The new email of the user.\\n     */\\n    function updateIdentity(string memory _name, string memory _email) public {\\n        require(identities[msg.sender].exists, \\\"Identity does not exist\\\");\\n        identities[msg.sender].name = _name;\\n        identities[msg.sender].email = _email;\\n        emit IdentityUpdated(msg.sender, _name, _email);\\n        logIdentityAction(\\\"Identity Updated\\\");\\n    }\\n\\n    /**\\n     * @dev Deletes the identity of the caller.\\n     */\\n    function deleteIdentity() public {\\n        require(identities[msg.sender].exists, \\\"Identity does not exist\\\");\\n        delete identities[msg.sender];\\n        emit IdentityDeleted(msg.sender);\\n        logIdentityAction(\\\"Identity Deleted\\\");\\n    }\\n\\n    /**\\n     * @dev Verifies the identity of the caller.\\n     */\\n    function verifyIdentity() public {\\n        require(identities[msg.sender].exists, \\\"Identity does not exist\\\");\\n        identities[msg.sender].isVerified = true;\\n        emit IdentityVerified(msg.sender);\\n        logIdentityAction(\\\"Identity Verified\\\");\\n    }\\n\\n    /**\\n     * @dev Revokes the verification of the identity of the caller.\\n     */\\n    function revokeIdentity() public {\\n        require(identities[msg.sender].exists, \\\"Identity does not exist\\\");\\n        identities[msg.sender].isVerified = false;\\n        emit IdentityRevoked(msg.sender);\\n        logIdentityAction(\\\"Identity Revoked\\\");\\n    }\\n\\n    /**\\n     * @dev Retrieves the identity of a given user.\\n     * @param _user The address of the user.\\n     * @return The identity of the user.\\n     */\\n    function getIdentity(address _user) public view returns (Identity memory) {\\n        require(identities[_user].exists, \\\"Identity does not exist\\\");\\n        return identities[_user];\\n    }\\n\\n    /**\\n     * @dev Checks if a given user's identity is verified.\\n     * @param _user The address of the user.\\n     * @return True if the user's identity is verified, false otherwise.\\n     */\\n    function isIdentityVerified(address _user) public view returns (bool) {\\n        require(identities[_user].exists, \\\"Identity does not exist\\\");\\n        return identities[_user].isVerified;\\n    }\\n\\n    /**\\n     * @dev Logs an identity-related action.\\n     * @param action The action to log.\\n     */\\n    function logIdentityAction(string memory action) internal {\\n        emit IdentityActionLogged(action);\\n    }\\n}\",\"keccak256\":\"0xdda40637037c3b0978e93406c92548687abe312b51820ebf16228edddb016e95\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610e37806100206000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c8063e16efc6d1161005b578063e16efc6d146100db578063e8731c32146100ee578063f63ac762146100f6578063f653b81e1461011957600080fd5b80632fea7b811461008d5780639ce7874b146100b6578063b6427210146100c0578063dd4db94f146100d3575b600080fd5b6100a061009b366004610a03565b61013d565b6040516100ad9190610a79565b60405180910390f35b6100be610329565b005b6100be6100ce366004610b8c565b610404565b6100be610589565b6100be6100e9366004610b8c565b610631565b6100be610716565b610109610104366004610a03565b6107c2565b60405190151581526020016100ad565b61012c610127366004610a03565b610824565b6040516100ad959493929190610bf0565b6040805160a081018252600080825260606020808401829052838501829052908301829052608083018290526001600160a01b03851682528190529190912060030154610100900460ff166101ad5760405162461bcd60e51b81526004016101a490610c40565b60405180910390fd5b6001600160a01b0380831660009081526020818152604091829020825160a0810190935280549093168252600183018054929392918401916101ee90610c77565b80601f016020809104026020016040519081016040528092919081815260200182805461021a90610c77565b80156102675780601f1061023c57610100808354040283529160200191610267565b820191906000526020600020905b81548152906001019060200180831161024a57829003601f168201915b5050505050815260200160028201805461028090610c77565b80601f01602080910402602001604051908101604052809291908181526020018280546102ac90610c77565b80156102f95780601f106102ce576101008083540402835291602001916102f9565b820191906000526020600020905b8154815290600101906020018083116102dc57829003601f168201915b50505091835250506003919091015460ff8082161515602084015261010090910416151560409091015292915050565b33600090815260208190526040902060030154610100900460ff166103605760405162461bcd60e51b81526004016101a490610c40565b33600090815260208190526040812080546001600160a01b03191681559061038b60018301826109ad565b6103996002830160006109ad565b50600301805461ffff1916905560405133907fc24bb9f4ebb7a8b8d37e375af6ac3f7e39d0218d2042bbd057d783048a904cd890600090a26104026040518060400160405280601081526020016f1259195b9d1a5d1e4811195b195d195960821b815250610973565b565b33600090815260208190526040902060030154610100900460ff161561046c5760405162461bcd60e51b815260206004820152601760248201527f4964656e7469747920616c72656164792065786973747300000000000000000060448201526064016101a4565b6040805160a08101825233808252602080830186815283850186905260006060850181905260016080860181905293815291829052939020825181546001600160a01b0319166001600160a01b039091161781559251919291908201906104d39082610d00565b50604082015160028201906104e89082610d00565b5060608201516003909101805460809093015115156101000261ff00199215159290921661ffff199093169290921717905560405133907fc4b28c639a4e4162300789b68ce924a9410c3f5aa5c0547962376234c0dd91a79061054e9085908590610dc0565b60405180910390a26105856040518060400160405280600e81526020016d1259195b9d1a5d1e48105919195960921b815250610973565b5050565b33600090815260208190526040902060030154610100900460ff166105c05760405162461bcd60e51b81526004016101a490610c40565b33600081815260208190526040808220600301805460ff19169055517fccf550e579fbeb7d56da9a0175f8d4526535cab139e73b592516f1916d4075dd9190a26104026040518060400160405280601081526020016f1259195b9d1a5d1e4814995d9bdad95960821b815250610973565b33600090815260208190526040902060030154610100900460ff166106685760405162461bcd60e51b81526004016101a490610c40565b3360009081526020819052604090206001016106848382610d00565b503360009081526020819052604090206002016106a18282610d00565b50336001600160a01b03167ffb96589d3b33bea42070ac9f2c42e02179f8d63c02a81c828772540ebe54bb0983836040516106dd929190610dc0565b60405180910390a26105856040518060400160405280601081526020016f1259195b9d1a5d1e48155c19185d195960821b815250610973565b33600090815260208190526040902060030154610100900460ff1661074d5760405162461bcd60e51b81526004016101a490610c40565b33600081815260208190526040808220600301805460ff19166001179055517f02f93fdaafad8edad1ca75101b1fbda62e64ab9afc26d0ea801ccf6ef02c09ab9190a2610402604051806040016040528060118152602001701259195b9d1a5d1e4815995c9a599a5959607a1b815250610973565b6001600160a01b038116600090815260208190526040812060030154610100900460ff166108025760405162461bcd60e51b81526004016101a490610c40565b506001600160a01b031660009081526020819052604090206003015460ff1690565b600060208190529081526040902080546001820180546001600160a01b03909216929161085090610c77565b80601f016020809104026020016040519081016040528092919081815260200182805461087c90610c77565b80156108c95780601f1061089e576101008083540402835291602001916108c9565b820191906000526020600020905b8154815290600101906020018083116108ac57829003601f168201915b5050505050908060020180546108de90610c77565b80601f016020809104026020016040519081016040528092919081815260200182805461090a90610c77565b80156109575780601f1061092c57610100808354040283529160200191610957565b820191906000526020600020905b81548152906001019060200180831161093a57829003601f168201915b5050506003909301549192505060ff8082169161010090041685565b7f25d23fb97da0ce6a75f9c37af342091e31f1767552a7d2fef6ee60dc32cb8cf6816040516109a29190610dee565b60405180910390a150565b5080546109b990610c77565b6000825580601f106109c9575050565b601f0160209004906000526020600020908101906109e791906109ea565b50565b5b808211156109ff57600081556001016109eb565b5090565b600060208284031215610a1557600080fd5b81356001600160a01b0381168114610a2c57600080fd5b9392505050565b6000815180845260005b81811015610a5957602081850181015186830182015201610a3d565b506000602082860101526020601f19601f83011685010191505092915050565b602080825282516001600160a01b03168282015282015160a06040830152600090610aa760c0840182610a33565b90506040840151601f19848303016060850152610ac48282610a33565b9150506060840151151560808401526080840151151560a08401528091505092915050565b634e487b7160e01b600052604160045260246000fd5b600082601f830112610b1057600080fd5b813567ffffffffffffffff80821115610b2b57610b2b610ae9565b604051601f8301601f19908116603f01168101908282118183101715610b5357610b53610ae9565b81604052838152866020858801011115610b6c57600080fd5b836020870160208301376000602085830101528094505050505092915050565b60008060408385031215610b9f57600080fd5b823567ffffffffffffffff80821115610bb757600080fd5b610bc386838701610aff565b93506020850135915080821115610bd957600080fd5b50610be685828601610aff565b9150509250929050565b6001600160a01b038616815260a060208201819052600090610c1490830187610a33565b8281036040840152610c268187610a33565b941515606084015250509015156080909101529392505050565b60208082526017908201527f4964656e7469747920646f6573206e6f74206578697374000000000000000000604082015260600190565b600181811c90821680610c8b57607f821691505b602082108103610cab57634e487b7160e01b600052602260045260246000fd5b50919050565b601f821115610cfb57600081815260208120601f850160051c81016020861015610cd85750805b601f850160051c820191505b81811015610cf757828155600101610ce4565b5050505b505050565b815167ffffffffffffffff811115610d1a57610d1a610ae9565b610d2e81610d288454610c77565b84610cb1565b602080601f831160018114610d635760008415610d4b5750858301515b600019600386901b1c1916600185901b178555610cf7565b600085815260208120601f198616915b82811015610d9257888601518255948401946001909101908401610d73565b5085821015610db05787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b604081526000610dd36040830185610a33565b8281036020840152610de58185610a33565b95945050505050565b602081526000610a2c6020830184610a3356fea26469706673582212208b7248b391c89a54792cf0285c5e97f8dd204ed915875f5849e9a23c4e82895e64736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c8063e16efc6d1161005b578063e16efc6d146100db578063e8731c32146100ee578063f63ac762146100f6578063f653b81e1461011957600080fd5b80632fea7b811461008d5780639ce7874b146100b6578063b6427210146100c0578063dd4db94f146100d3575b600080fd5b6100a061009b366004610a03565b61013d565b6040516100ad9190610a79565b60405180910390f35b6100be610329565b005b6100be6100ce366004610b8c565b610404565b6100be610589565b6100be6100e9366004610b8c565b610631565b6100be610716565b610109610104366004610a03565b6107c2565b60405190151581526020016100ad565b61012c610127366004610a03565b610824565b6040516100ad959493929190610bf0565b6040805160a081018252600080825260606020808401829052838501829052908301829052608083018290526001600160a01b03851682528190529190912060030154610100900460ff166101ad5760405162461bcd60e51b81526004016101a490610c40565b60405180910390fd5b6001600160a01b0380831660009081526020818152604091829020825160a0810190935280549093168252600183018054929392918401916101ee90610c77565b80601f016020809104026020016040519081016040528092919081815260200182805461021a90610c77565b80156102675780601f1061023c57610100808354040283529160200191610267565b820191906000526020600020905b81548152906001019060200180831161024a57829003601f168201915b5050505050815260200160028201805461028090610c77565b80601f01602080910402602001604051908101604052809291908181526020018280546102ac90610c77565b80156102f95780601f106102ce576101008083540402835291602001916102f9565b820191906000526020600020905b8154815290600101906020018083116102dc57829003601f168201915b50505091835250506003919091015460ff8082161515602084015261010090910416151560409091015292915050565b33600090815260208190526040902060030154610100900460ff166103605760405162461bcd60e51b81526004016101a490610c40565b33600090815260208190526040812080546001600160a01b03191681559061038b60018301826109ad565b6103996002830160006109ad565b50600301805461ffff1916905560405133907fc24bb9f4ebb7a8b8d37e375af6ac3f7e39d0218d2042bbd057d783048a904cd890600090a26104026040518060400160405280601081526020016f1259195b9d1a5d1e4811195b195d195960821b815250610973565b565b33600090815260208190526040902060030154610100900460ff161561046c5760405162461bcd60e51b815260206004820152601760248201527f4964656e7469747920616c72656164792065786973747300000000000000000060448201526064016101a4565b6040805160a08101825233808252602080830186815283850186905260006060850181905260016080860181905293815291829052939020825181546001600160a01b0319166001600160a01b039091161781559251919291908201906104d39082610d00565b50604082015160028201906104e89082610d00565b5060608201516003909101805460809093015115156101000261ff00199215159290921661ffff199093169290921717905560405133907fc4b28c639a4e4162300789b68ce924a9410c3f5aa5c0547962376234c0dd91a79061054e9085908590610dc0565b60405180910390a26105856040518060400160405280600e81526020016d1259195b9d1a5d1e48105919195960921b815250610973565b5050565b33600090815260208190526040902060030154610100900460ff166105c05760405162461bcd60e51b81526004016101a490610c40565b33600081815260208190526040808220600301805460ff19169055517fccf550e579fbeb7d56da9a0175f8d4526535cab139e73b592516f1916d4075dd9190a26104026040518060400160405280601081526020016f1259195b9d1a5d1e4814995d9bdad95960821b815250610973565b33600090815260208190526040902060030154610100900460ff166106685760405162461bcd60e51b81526004016101a490610c40565b3360009081526020819052604090206001016106848382610d00565b503360009081526020819052604090206002016106a18282610d00565b50336001600160a01b03167ffb96589d3b33bea42070ac9f2c42e02179f8d63c02a81c828772540ebe54bb0983836040516106dd929190610dc0565b60405180910390a26105856040518060400160405280601081526020016f1259195b9d1a5d1e48155c19185d195960821b815250610973565b33600090815260208190526040902060030154610100900460ff1661074d5760405162461bcd60e51b81526004016101a490610c40565b33600081815260208190526040808220600301805460ff19166001179055517f02f93fdaafad8edad1ca75101b1fbda62e64ab9afc26d0ea801ccf6ef02c09ab9190a2610402604051806040016040528060118152602001701259195b9d1a5d1e4815995c9a599a5959607a1b815250610973565b6001600160a01b038116600090815260208190526040812060030154610100900460ff166108025760405162461bcd60e51b81526004016101a490610c40565b506001600160a01b031660009081526020819052604090206003015460ff1690565b600060208190529081526040902080546001820180546001600160a01b03909216929161085090610c77565b80601f016020809104026020016040519081016040528092919081815260200182805461087c90610c77565b80156108c95780601f1061089e576101008083540402835291602001916108c9565b820191906000526020600020905b8154815290600101906020018083116108ac57829003601f168201915b5050505050908060020180546108de90610c77565b80601f016020809104026020016040519081016040528092919081815260200182805461090a90610c77565b80156109575780601f1061092c57610100808354040283529160200191610957565b820191906000526020600020905b81548152906001019060200180831161093a57829003601f168201915b5050506003909301549192505060ff8082169161010090041685565b7f25d23fb97da0ce6a75f9c37af342091e31f1767552a7d2fef6ee60dc32cb8cf6816040516109a29190610dee565b60405180910390a150565b5080546109b990610c77565b6000825580601f106109c9575050565b601f0160209004906000526020600020908101906109e791906109ea565b50565b5b808211156109ff57600081556001016109eb565b5090565b600060208284031215610a1557600080fd5b81356001600160a01b0381168114610a2c57600080fd5b9392505050565b6000815180845260005b81811015610a5957602081850181015186830182015201610a3d565b506000602082860101526020601f19601f83011685010191505092915050565b602080825282516001600160a01b03168282015282015160a06040830152600090610aa760c0840182610a33565b90506040840151601f19848303016060850152610ac48282610a33565b9150506060840151151560808401526080840151151560a08401528091505092915050565b634e487b7160e01b600052604160045260246000fd5b600082601f830112610b1057600080fd5b813567ffffffffffffffff80821115610b2b57610b2b610ae9565b604051601f8301601f19908116603f01168101908282118183101715610b5357610b53610ae9565b81604052838152866020858801011115610b6c57600080fd5b836020870160208301376000602085830101528094505050505092915050565b60008060408385031215610b9f57600080fd5b823567ffffffffffffffff80821115610bb757600080fd5b610bc386838701610aff565b93506020850135915080821115610bd957600080fd5b50610be685828601610aff565b9150509250929050565b6001600160a01b038616815260a060208201819052600090610c1490830187610a33565b8281036040840152610c268187610a33565b941515606084015250509015156080909101529392505050565b60208082526017908201527f4964656e7469747920646f6573206e6f74206578697374000000000000000000604082015260600190565b600181811c90821680610c8b57607f821691505b602082108103610cab57634e487b7160e01b600052602260045260246000fd5b50919050565b601f821115610cfb57600081815260208120601f850160051c81016020861015610cd85750805b601f850160051c820191505b81811015610cf757828155600101610ce4565b5050505b505050565b815167ffffffffffffffff811115610d1a57610d1a610ae9565b610d2e81610d288454610c77565b84610cb1565b602080601f831160018114610d635760008415610d4b5750858301515b600019600386901b1c1916600185901b178555610cf7565b600085815260208120601f198616915b82811015610d9257888601518255948401946001909101908401610d73565b5085821015610db05787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b604081526000610dd36040830185610a33565b8281036020840152610de58185610a33565b95945050505050565b602081526000610a2c6020830184610a3356fea26469706673582212208b7248b391c89a54792cf0285c5e97f8dd204ed915875f5849e9a23c4e82895e64736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "addIdentity(string,string)": {
+        "details": "Adds a new identity for the caller.",
+        "params": {
+          "_email": "The email of the user.",
+          "_name": "The name of the user."
+        }
+      },
+      "deleteIdentity()": {
+        "details": "Deletes the identity of the caller."
+      },
+      "getIdentity(address)": {
+        "details": "Retrieves the identity of a given user.",
+        "params": {
+          "_user": "The address of the user."
+        },
+        "returns": {
+          "_0": "The identity of the user."
+        }
+      },
+      "isIdentityVerified(address)": {
+        "details": "Checks if a given user's identity is verified.",
+        "params": {
+          "_user": "The address of the user."
+        },
+        "returns": {
+          "_0": "True if the user's identity is verified, false otherwise."
+        }
+      },
+      "revokeIdentity()": {
+        "details": "Revokes the verification of the identity of the caller."
+      },
+      "updateIdentity(string,string)": {
+        "details": "Updates the identity of the caller.",
+        "params": {
+          "_email": "The new email of the user.",
+          "_name": "The new name of the user."
+        }
+      },
+      "verifyIdentity()": {
+        "details": "Verifies the identity of the caller."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "IdentityActionLogged(string)": {
+        "notice": "Event emitted when an identity-related action is logged"
+      },
+      "IdentityAdded(address,string,string)": {
+        "notice": "Event emitted when a new identity is added"
+      },
+      "IdentityDeleted(address)": {
+        "notice": "Event emitted when an identity is deleted"
+      },
+      "IdentityRevoked(address)": {
+        "notice": "Event emitted when an identity is revoked"
+      },
+      "IdentityUpdated(address,string,string)": {
+        "notice": "Event emitted when an identity is updated"
+      },
+      "IdentityVerified(address)": {
+        "notice": "Event emitted when an identity is verified"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "identities(address)": {
+        "notice": "Mapping from user address to their identity"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 18,
+        "contract": "contracts/Identity.sol:IdentityVerification",
+        "label": "identities",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_struct(Identity)12_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_struct(Identity)12_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct IdentityVerification.Identity)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Identity)12_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Identity)12_storage": {
+        "encoding": "inplace",
+        "label": "struct IdentityVerification.Identity",
+        "members": [
+          {
+            "astId": 3,
+            "contract": "contracts/Identity.sol:IdentityVerification",
+            "label": "user",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 5,
+            "contract": "contracts/Identity.sol:IdentityVerification",
+            "label": "name",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 7,
+            "contract": "contracts/Identity.sol:IdentityVerification",
+            "label": "email",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 9,
+            "contract": "contracts/Identity.sol:IdentityVerification",
+            "label": "isVerified",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_bool"
+          },
+          {
+            "astId": 11,
+            "contract": "contracts/Identity.sol:IdentityVerification",
+            "label": "exists",
+            "offset": 1,
+            "slot": "3",
+            "type": "t_bool"
+          }
+        ],
+        "numberOfBytes": "128"
+      }
+    }
+  }
+}

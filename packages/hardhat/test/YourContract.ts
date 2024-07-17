@@ -10,7 +10,7 @@ describe("IdentityVerification", function () {
   let user2: any;
 
   before(async () => {
-    [owner, user1, user2] = await ethers.getSigners();
+    [user1, user2] = await ethers.getSigners();
     const identityVerificationFactory = await ethers.getContractFactory("IdentityVerification");
     identityVerification = (await identityVerificationFactory.deploy()) as IdentityVerification;
     await identityVerification.waitForDeployment();
