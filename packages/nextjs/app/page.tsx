@@ -35,6 +35,39 @@ const Home: NextPage = () => {
   const [isIdentityFetched, setIsIdentityFetched] = useState(false);
 
   /**
+   * Initializes the Ethereum provider, signer, and contract, then fetches the user's identity.
+   */
+  useEffect(() => {
+    const init = async () => {
+      if (window.ethereum) {
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        await provider.send("eth_requestAccounts", []);
+        const signer = await provider.getSigner();
+        const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+        setContract(contract);
+        const account = await signer.getAddress();
+        setAccount(account);
+        fetchIdentity(account);
+      }
+    };
+    init();
+  }, [account, isIdentityFetched]);
+
+  const { writeContractAsync: addIdentity } = useScaffoldWriteContract("IdentityVerification");
+  const { writeContractAsync: updateIdentity } = useScaffoldWriteContract("IdentityVerification");
+  const { writeContractAsync: verifyIdentity } = useScaffoldWriteContract("IdentityVerification");
+  const { writeContractAsync: revokeIdentity } = useScaffoldWriteContract("IdentityVerification");
+
+  /**
+   * Displays a toast notification.
+   * @param {string} message - The message to display.
+   * @param {TypeOptions} [type="info"] - The type of notification ("info", "success", "error", etc.).
+   */
+  const notify = (message: string, type: TypeOptions = "info") => {
+    toast(message, { type });
+  };
+
+  /**
    * Fetches the user's identity from the smart contract and XRPL.
    * @param {string} account - The user's Ethereum account address.
    */
@@ -53,39 +86,6 @@ const Home: NextPage = () => {
     } catch (error) {
       notify("Failed to fetch identity", "error");
     }
-  };
-
-  /**
-   * Initializes the Ethereum provider, signer, and contract, then fetches the user's identity.
-   */
-  useEffect(() => {
-    const init = async () => {
-      if (window.ethereum) {
-        const provider = new ethers.BrowserProvider(window.ethereum);
-        await provider.send("eth_requestAccounts", []);
-        const signer = await provider.getSigner();
-        const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
-        setContract(contract);
-        const account = await signer.getAddress();
-        setAccount(account);
-        fetchIdentity(account);
-      }
-    };
-    init();
-  }, [account, isIdentityFetched, fetchIdentity]);
-
-  const { writeContractAsync: addIdentity } = useScaffoldWriteContract("IdentityVerification");
-  const { writeContractAsync: updateIdentity } = useScaffoldWriteContract("IdentityVerification");
-  const { writeContractAsync: verifyIdentity } = useScaffoldWriteContract("IdentityVerification");
-  const { writeContractAsync: revokeIdentity } = useScaffoldWriteContract("IdentityVerification");
-
-  /**
-   * Displays a toast notification.
-   * @param {string} message - The message to display.
-   * @param {TypeOptions} [type="info"] - The type of notification ("info", "success", "error", etc.).
-   */
-  const notify = (message: string, type: TypeOptions = "info") => {
-    toast(message, { type });
   };
 
   /**
