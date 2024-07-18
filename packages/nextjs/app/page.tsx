@@ -51,7 +51,7 @@ const Home: NextPage = () => {
       }
     };
     init();
-  }, [account]);
+  });
 
   const { writeContractAsync: addIdentity } = useScaffoldWriteContract("IdentityVerification");
   const { writeContractAsync: updateIdentity } = useScaffoldWriteContract("updateIdentity");
