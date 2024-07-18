@@ -51,12 +51,12 @@ const Home: NextPage = () => {
       }
     };
     init();
-  });
+  }, [account, isIdentityFetched]);
 
   const { writeContractAsync: addIdentity } = useScaffoldWriteContract("IdentityVerification");
-  const { writeContractAsync: updateIdentity } = useScaffoldWriteContract("updateIdentity");
-  const { writeContractAsync: verifyIdentity } = useScaffoldWriteContract("verifyIdentity");
-  const { writeContractAsync: revokeIdentity } = useScaffoldWriteContract("revokeIdentity");
+  const { writeContractAsync: updateIdentity } = useScaffoldWriteContract("IdentityVerification");
+  const { writeContractAsync: verifyIdentity } = useScaffoldWriteContract("IdentityVerification");
+  const { writeContractAsync: revokeIdentity } = useScaffoldWriteContract("IdentityVerification");
 
   /**
    * Displays a toast notification.
